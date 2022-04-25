@@ -42,17 +42,33 @@ public:
     }
 }; //end of Person
 
+class Student : public Person{
+
+}; //end of Student Class
+
+
 class Teacher : public Person{
 private:
     int tid;
     string course;
     uint16_t salary;
+    vector <Student*> t_vec;
 public:
+    Teacher(int tid, string course, uint16_t salary, string name, int age, char gender) : Person(name,age,gender) {
+        cout << "Teacher " << name << ", " << age << ", " << gender << " has been created." << endl;
+        this->tid = tid;
+        this->course = course;
+        this->salary = salary;
+    }
 
-};
+    static void addStudent(Student *s) {
+        //store
+       t_vec.push_back(s); //push a student object pointer into array
 
-class Student : public Person{
+       for(int i = 0; i < t_vec.size(); i++) {
 
+       }
+    }
 };
 
 void add(vector<Person> &storage){
@@ -128,6 +144,8 @@ int main() {
             case 3: {
                 cout << "Add selected " << endl;
                 add(storage);
+                // when adding a student enrolled in a course, must add to teacher's list of students
+                // Teacher::addStudent();
                 break;
             }
             case 4:
