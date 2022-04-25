@@ -90,12 +90,20 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
             cin >> age;
             cout << "Provide a gender (M/F) for " << name << ": ";
             cin >> gender;
-            Person temp (name, age, gender);
-            storage.push_back(temp);
+            Teacher temp (name, age, gender);
+            t_vec.push_back(temp);
             break;
         }
         case 2:{
             cout << "Add student selected " << endl;
+            cout << "Provide a name for this student: ";
+            cin >> name;
+            cout << "Provide an age for " << name << ": ";
+            cin >> age;
+            cout << "Provide a gender (M/F) for " << name << ": ";
+            cin >> gender;
+            Student temp (name, age, gender);
+            s_vec.push_back(temp);
             break;
         }
         default:
@@ -103,25 +111,45 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
     }
 } //end add()
 
-void view(vector<Person> storage) {
+void view(vector<Teacher> t_vec, vector<Student> s_vec) {
     cout << endl;
-    for(int i =0; i<storage.size(); i++) {
-        cout << storage[i].getName() << ", "
-        << storage[i].getAge()<< endl;
-    }
-} //end view()
+    cout << setfill(' ') << setw(59) << "1. View Teacher(s)" << endl;
+    cout << setfill(' ') << setw(59) << "2. View Student(s)" << endl;
+    int input = 0;
+    cin >> input;
+    switch (input) {
+        case 1: {
+            cout << "View teacher selected" << endl;
+            for (int i = 0; i < t_vec.size(); i++) {
+                cout << t_vec[i].getName() << ", "
+                     << t_vec[i].getAge() << endl;
+            }
+            break;
+        } // end case 1
+        case 2: {
+            cout << "View teacher selected" << endl;
+            for (int i = 0; i < s_vec.size(); i++) {
+                cout << s_vec[i].getName() << ", "
+                     << s_vec[i].getAge() << endl;
+            }
+            break;
+        } //end case 2
+        default:
+            break;
+        } //end switch
+    } //end view()
 
 
-void remove(vector<Person> &storage) {
+void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     cout << endl;
-    view(storage);
+    view(t_vec, s_vec);
     cout << "Which would you like to remove: " << endl;
     string name;
     char flag = 'F';
     cin >> name;
-    for(int i =0; i<storage.size(); i++) {
-        if(storage[i].getName() == name){
-            storage.erase(storage.begin() + i);
+    for(int i =0; i<t_vec.size(); i++) {
+        if(t_vec[i].getName() == name){
+            t_vec.erase(t_vec.begin() + i);
             flag = 'T';
             cout << "Removed" << endl;
         }
@@ -166,13 +194,10 @@ int main() {
                 break;
             case 3: {
                 cout << "Add selected " << endl;
-<<<<<<< HEAD
                 add(storage);
                 // when adding a student enrolled in a course, must add to teacher's list of students
                 // Teacher::addStudent();
-=======
                 add(teacherVec, studentVec);
->>>>>>> 00bec5c187c30cd0b93f2888ecb782d6c8a51d73
                 break;
             }
             case 4:
