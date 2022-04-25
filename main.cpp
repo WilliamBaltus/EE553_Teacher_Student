@@ -43,7 +43,15 @@ public:
 }; //end of Person
 
 class Student : public Person{
+private:
+    int sid;
+    string course;
+    string major;
+public:
 
+    string getCourseS() {
+        return course;
+    }
 }; //end of Student Class
 
 
@@ -52,7 +60,7 @@ private:
     int tid;
     string course;
     uint16_t salary;
-    vector <Student*> t_vec;
+    static vector <Student*> t_vec;
 public:
     Teacher(int tid, string course, uint16_t salary, string name, int age, char gender) : Person(name,age,gender) {
         cout << "Teacher " << name << ", " << age << ", " << gender << " has been created." << endl;
@@ -61,14 +69,23 @@ public:
         this->salary = salary;
     }
 
+    string getCourseT() {
+        return course;
+    }
+
     static void addStudent(Student *s) {
         //store
        t_vec.push_back(s); //push a student object pointer into array
 
        for(int i = 0; i < t_vec.size(); i++) {
+           if (t_vec[i]->getCourseS() == getCourseT()) {
+
+           }
 
        }
     }
+
+
 };
 
 //ADD FUNCTION PASS BY REFERENCE
@@ -90,7 +107,16 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
             cin >> age;
             cout << "Provide a gender (M/F) for " << name << ": ";
             cin >> gender;
-            Teacher temp (name, age, gender);
+            int tid;
+            cout << "Provide an ID for " << name << ": ";
+            cin >> tid;
+            string course;
+            cout << "Provide a course for " << name << ": ";
+            cin >> course;
+            uint16_t salary;
+            cout << "Provide a salary for " << name << ": ";
+            cin >> salary;
+            Teacher temp (tid, course, salary,name, age, gender);
             t_vec.push_back(temp);
             break;
         }
@@ -102,7 +128,7 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
             cin >> age;
             cout << "Provide a gender (M/F) for " << name << ": ";
             cin >> gender;
-            Student temp (name, age, gender);
+            Student temp (sid, course, major, name, age, gender);
             s_vec.push_back(temp);
             break;
         }
@@ -139,7 +165,7 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
         } //end switch
     } //end view()
 
-
+// RTEMOVE PASS BY REFERNECE
 void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     cout << endl;
     view(t_vec, s_vec);
@@ -147,16 +173,25 @@ void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     string name;
     char flag = 'F';
     cin >> name;
+    //go through teachers
     for(int i =0; i<t_vec.size(); i++) {
-        if(t_vec[i].getName() == name){
+        if(t_vec[i].getName() == name)
+        {
             t_vec.erase(t_vec.begin() + i);
             flag = 'T';
             cout << "Removed" << endl;
         }
     }
-
+    for(int i =0; i<s_vec.size(); i++) {
+        if(s_vec[i].getName() == name)
+        {
+            s_vec.erase(s_vec.begin() + i);
+            flag = 'T';
+            cout << "Removed" << endl;
+        }
+    }
     if(flag == 'F'){
-        cout << name << " is not in the list!" << endl;
+        cout << name << " is not in the lists!" << endl;
     }
 } //end delete()
 
@@ -194,7 +229,6 @@ int main() {
                 break;
             case 3: {
                 cout << "Add selected " << endl;
-                add(storage);
                 // when adding a student enrolled in a course, must add to teacher's list of students
                 // Teacher::addStudent();
                 add(teacherVec, studentVec);

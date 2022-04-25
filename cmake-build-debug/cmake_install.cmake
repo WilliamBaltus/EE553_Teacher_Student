@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # Install script for directory: C:/Users/kojul/OneDrive - stevens.edu/S22/CPE553/EE553_Teacher_Student
+=======
+# Install script for directory: C:/Users/wbalt/Documents/GitHub/EE553_Teacher_Student
+>>>>>>> Stashed changes
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< Updated upstream
 file(WRITE "C:/Users/kojul/OneDrive - stevens.edu/S22/CPE553/EE553_Teacher_Student/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "C:/Users/wbalt/Documents/GitHub/EE553_Teacher_Student/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> Stashed changes
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
