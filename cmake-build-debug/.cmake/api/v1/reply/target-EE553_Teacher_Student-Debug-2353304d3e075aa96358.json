@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Teacher_Student_Project.exe"
+			"path" : "EE553_Teacher_Student.exe"
 		},
 		{
-			"path" : "Teacher_Student_Project.pdb"
+			"path" : "EE553_Teacher_Student.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			]
 		}
 	],
-	"id" : "Teacher_Student_Project::@6890427a1f51a3e7e1df",
+	"id" : "EE553_Teacher_Student::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -79,8 +79,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Teacher_Student_Project",
-	"nameOnDisk" : "Teacher_Student_Project.exe",
+	"name" : "EE553_Teacher_Student",
+	"nameOnDisk" : "EE553_Teacher_Student.exe",
 	"paths" : 
 	{
 		"build" : ".",

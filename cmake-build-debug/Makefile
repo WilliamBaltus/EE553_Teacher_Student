@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Teacher_Student_Project
+# Target rules for targets named EE553_Teacher_Student
 
 # Build rule for target.
-Teacher_Student_Project: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Teacher_Student_Project
-.PHONY : Teacher_Student_Project
+EE553_Teacher_Student: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 EE553_Teacher_Student
+.PHONY : EE553_Teacher_Student
 
 # fast build rule for target.
-Teacher_Student_Project/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Teacher_Student_Project.dir\build.make CMakeFiles/Teacher_Student_Project.dir/build
-.PHONY : Teacher_Student_Project/fast
+EE553_Teacher_Student/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE553_Teacher_Student.dir\build.make CMakeFiles/EE553_Teacher_Student.dir/build
+.PHONY : EE553_Teacher_Student/fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Teacher_Student_Project.dir\build.make CMakeFiles/Teacher_Student_Project.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE553_Teacher_Student.dir\build.make CMakeFiles/EE553_Teacher_Student.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -141,7 +141,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Teacher_Student_Project.dir\build.make CMakeFiles/Teacher_Student_Project.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE553_Teacher_Student.dir\build.make CMakeFiles/EE553_Teacher_Student.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Teacher_Student_Project.dir\build.make CMakeFiles/Teacher_Student_Project.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EE553_Teacher_Student.dir\build.make CMakeFiles/EE553_Teacher_Student.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -160,7 +160,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Teacher_Student_Project
+	@echo ... EE553_Teacher_Student
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

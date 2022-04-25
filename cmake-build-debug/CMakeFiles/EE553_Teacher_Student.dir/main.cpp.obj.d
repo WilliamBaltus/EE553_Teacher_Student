@@ -1,4 +1,4 @@
-CMakeFiles/Teacher_Student_Project.dir/main.cpp.obj: \
+CMakeFiles/EE553_Teacher_Student.dir/main.cpp.obj: \
  C:\Users\wbalt\Documents\GitHub\EE553_Teacher_Student\main.cpp \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/PROGRA~1/JETBRA~1/CLION2~1.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

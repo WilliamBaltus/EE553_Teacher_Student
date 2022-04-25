@@ -181,7 +181,7 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
             break;
         } // end case 1
         case 2: {
-            cout << "View teacher selected" << endl;
+            cout << "View student selected" << endl;
             for (int i = 0; i < s_vec.size(); i++) {
                 cout << s_vec[i].getName() << ", "
                      << s_vec[i].getAge() << endl;
@@ -193,7 +193,7 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
     } //end switch
 } //end view()
 
-// REMOVE PASS BY REFERNECE
+// REMOVE PASS BY REFERENCE
 void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     cout << endl;
     view(t_vec, s_vec);
@@ -222,7 +222,6 @@ void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
         cout << name << " is not in the lists!" << endl;
     }
 } //end delete()
-
 
 int main() {
     vector<Teacher> teacherVec;

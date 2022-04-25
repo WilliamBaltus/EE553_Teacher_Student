@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "Teacher_Student_Project",
+					"name" : "EE553_Teacher_Student",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "Teacher_Student_Project::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Teacher_Student_Project-Debug-3226b0ec680525256ee6.json",
-					"name" : "Teacher_Student_Project",
+					"id" : "EE553_Teacher_Student::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-EE553_Teacher_Student-Debug-2353304d3e075aa96358.json",
+					"name" : "EE553_Teacher_Student",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/kojul/OneDrive - stevens.edu/S22/CPE553/EE553_Teacher_Student/cmake-build-debug",
-		"source" : "C:/Users/kojul/OneDrive - stevens.edu/S22/CPE553/EE553_Teacher_Student"
+		"build" : "C:/Users/wbalt/Documents/GitHub/EE553_Teacher_Student/cmake-build-debug",
+		"source" : "C:/Users/wbalt/Documents/GitHub/EE553_Teacher_Student"
 	},
 	"version" : 
 	{

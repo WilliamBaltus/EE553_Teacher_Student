@@ -131,5 +131,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Teacher_Student_Project.dir/DependInfo.cmake"
+  "CMakeFiles/EE553_Teacher_Student.dir/DependInfo.cmake"
   )

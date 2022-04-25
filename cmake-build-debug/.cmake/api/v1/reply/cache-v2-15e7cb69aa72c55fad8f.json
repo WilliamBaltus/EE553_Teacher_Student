@@ -719,7 +719,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/Teacher_Student_Project"
+			"value" : "C:/Program Files (x86)/EE553_Teacher_Student"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -939,7 +939,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Teacher_Student_Project"
+			"value" : "EE553_Teacher_Student"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1318,7 +1318,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "Teacher_Student_Project_BINARY_DIR",
+			"name" : "EE553_Teacher_Student_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1330,7 +1330,7 @@
 			"value" : "C:/Users/wbalt/Documents/GitHub/EE553_Teacher_Student/cmake-build-debug"
 		},
 		{
-			"name" : "Teacher_Student_Project_IS_TOP_LEVEL",
+			"name" : "EE553_Teacher_Student_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1342,7 +1342,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "Teacher_Student_Project_SOURCE_DIR",
+			"name" : "EE553_Teacher_Student_SOURCE_DIR",
 			"properties" : 
 			[
 				{
