@@ -65,13 +65,12 @@ public:
 
 }; //end of Student Class
 
-
 class Teacher : public Person{
 private:
     int tid;
     string course;
     uint16_t salary;
-    static vector <Student*> t_vec;
+    vector <Student*> t_vec;
 public:
     Teacher(int tid, string course, uint16_t salary, string name, int age, char gender) : Person(name,age,gender) {
         cout << "Teacher " << name << ", " << age << ", " << gender << " has been created." << endl;
@@ -86,18 +85,26 @@ public:
 
     void addStudent(vector<Student> &s_vec) {
         //store
-      // t_vec.push_back(s); //push a student object pointer into array
+        // t_vec.push_back(s); //push a student object pointer into array
 
-       for(int i = 0; i < s_vec.size(); i++) {
-           if (s_vec[i].getCourseS() == getCourseT()) {
+        for(int i = 0; i < s_vec.size(); i++) {
+            if (s_vec[i].getCourseS() == getCourseT()) {
+                // add student to teacher's list (point to the address of student
+                t_vec.push_back(&s_vec[i]);
+                cout << "Student " << s_vec[i].getName() << " has been added to Teacher " << getName() << endl;
+            }
 
-           }
-
-       }
+        }
     }
 
 
 };
+
+void checkStudent(vector<Teacher> &t_vec, vector<Student> s_vec){
+    for(int i = 0; i<t_vec.size(); i++){
+        t_vec[i].addStudent(s_vec);
+    }
+}
 
 //ADD FUNCTION PASS BY REFERENCE
 void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
@@ -145,11 +152,12 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
             string course;
             cout << "Provide a course for " << name << ": ";
             cin >> course;
-            uint16_t major;
+            string major;
             cout << "Provide a major for " << name << ": ";
             cin >> major;
             Student temp (sid, course, major, name, age, gender);
             s_vec.push_back(temp);
+            checkStudent(t_vec, s_vec);
             break;
         }
         default:
@@ -182,10 +190,10 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
         } //end case 2
         default:
             break;
-        } //end switch
-    } //end view()
+    } //end switch
+} //end view()
 
-// RTEMOVE PASS BY REFERNECE
+// REMOVE PASS BY REFERNECE
 void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     cout << endl;
     view(t_vec, s_vec);
@@ -215,11 +223,6 @@ void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     }
 } //end delete()
 
-void checkStudent(vector<Teacher> &t_vec, vector<Student> &s_vec){
-    for(int i = 0; i<t_vec.size(); i++){
-        t_vec[i].addStudent(s_vec);
-    }
-}
 
 int main() {
     vector<Teacher> teacherVec;
