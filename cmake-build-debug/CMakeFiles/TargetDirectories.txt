@@ -1,0 +1,3 @@
+C:/Users/wbalt/CLionProjects/Teacher_Student_Project/cmake-build-debug/CMakeFiles/Teacher_Student_Project.dir
+C:/Users/wbalt/CLionProjects/Teacher_Student_Project/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/wbalt/CLionProjects/Teacher_Student_Project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
