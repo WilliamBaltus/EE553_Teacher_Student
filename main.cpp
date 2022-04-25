@@ -48,10 +48,21 @@ private:
     string course;
     string major;
 public:
-
+    Student(int sid, string course, string major, string name, int age, char gender) : Person(name,age,gender) {
+        this->sid = sid;
+        this->course = course;
+        this->major = major;
+    }
     string getCourseS() {
         return course;
     }
+    int getSID() {
+        return sid;
+    }
+    string getMajor() {
+        return major;
+    }
+
 }; //end of Student Class
 
 
@@ -73,12 +84,12 @@ public:
         return course;
     }
 
-    static void addStudent(Student *s) {
+    void addStudent(vector<Student> &s_vec) {
         //store
-       t_vec.push_back(s); //push a student object pointer into array
+      // t_vec.push_back(s); //push a student object pointer into array
 
-       for(int i = 0; i < t_vec.size(); i++) {
-           if (t_vec[i]->getCourseS() == getCourseT()) {
+       for(int i = 0; i < s_vec.size(); i++) {
+           if (s_vec[i].getCourseS() == getCourseT()) {
 
            }
 
@@ -128,6 +139,15 @@ void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
             cin >> age;
             cout << "Provide a gender (M/F) for " << name << ": ";
             cin >> gender;
+            int sid;
+            cout << "Provide an ID for " << name << ": ";
+            cin >> sid;
+            string course;
+            cout << "Provide a course for " << name << ": ";
+            cin >> course;
+            uint16_t major;
+            cout << "Provide a major for " << name << ": ";
+            cin >> major;
             Student temp (sid, course, major, name, age, gender);
             s_vec.push_back(temp);
             break;
@@ -194,6 +214,12 @@ void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
         cout << name << " is not in the lists!" << endl;
     }
 } //end delete()
+
+void checkStudent(vector<Teacher> &t_vec, vector<Student> &s_vec){
+    for(int i = 0; i<t_vec.size(); i++){
+        t_vec[i].addStudent(s_vec);
+    }
+}
 
 int main() {
     vector<Teacher> teacherVec;
