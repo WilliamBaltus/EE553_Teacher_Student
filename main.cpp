@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 class Person{
 private:
     string name;
@@ -98,7 +97,7 @@ public:
     }
 
 
-};
+}; //end of Teacher
 
 void checkStudent(vector<Teacher> &t_vec, vector<Student> s_vec){
     for(int i = 0; i<t_vec.size(); i++){
@@ -106,7 +105,7 @@ void checkStudent(vector<Teacher> &t_vec, vector<Student> s_vec){
     }
 }
 
-//ADD FUNCTION PASS BY REFERENCE
+//ADD PASS BY REFERENCE
 void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
     cout << endl;
     cout << setfill(' ') << setw(59) << "1. Add Teacher" << endl;
@@ -176,7 +175,9 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
             cout << "View teacher selected" << endl;
             for (int i = 0; i < t_vec.size(); i++) {
                 cout << t_vec[i].getName() << ", "
-                     << t_vec[i].getAge() << endl;
+                     << t_vec[i].getAge() << ", "
+                     << t_vec[i].getGender() <<", "
+                     << t_vec[i].getCourseT()<< endl;
             }
             break;
         } // end case 1
@@ -184,7 +185,9 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
             cout << "View student selected" << endl;
             for (int i = 0; i < s_vec.size(); i++) {
                 cout << s_vec[i].getName() << ", "
-                     << s_vec[i].getAge() << endl;
+                     << s_vec[i].getAge() << ", "
+                     << s_vec[i].getGender() << ", "
+                     << s_vec[i].getCourseS()<< endl;
             }
             break;
         } //end case 2
@@ -193,7 +196,7 @@ void view(vector<Teacher> t_vec, vector<Student> s_vec) {
     } //end switch
 } //end view()
 
-// REMOVE PASS BY REFERENCE
+//REMOVE PASS BY REFERENCE
 void remove(vector<Teacher> &t_vec, vector<Student> &s_vec) {
     cout << endl;
     view(t_vec, s_vec);
