@@ -71,7 +71,8 @@ public:
     }
 };
 
-void add(vector<Person> &storage){
+//ADD FUNCTION PASS BY REFERENCE
+void add(vector<Teacher> &t_vec, vector<Student> &s_vec){
     cout << endl;
     cout << setfill(' ') << setw(59) << "1. Add Teacher" << endl;
     cout << setfill(' ') << setw(59) << "2. Add Student" << endl;
@@ -110,8 +111,30 @@ void view(vector<Person> storage) {
     }
 } //end view()
 
+
+void remove(vector<Person> &storage) {
+    cout << endl;
+    view(storage);
+    cout << "Which would you like to remove: " << endl;
+    string name;
+    char flag = 'F';
+    cin >> name;
+    for(int i =0; i<storage.size(); i++) {
+        if(storage[i].getName() == name){
+            storage.erase(storage.begin() + i);
+            flag = 'T';
+            cout << "Removed" << endl;
+        }
+    }
+
+    if(flag == 'F'){
+        cout << name << " is not in the list!" << endl;
+    }
+} //end delete()
+
 int main() {
-    vector<Person> storage;
+    vector<Teacher> teacherVec;
+    vector<Student> studentVec;
     while(1) {
         // Print statements for the console output
         cout << endl;
@@ -139,13 +162,17 @@ int main() {
                 exit(1);
             case 2:
                 cout << "View selected " << endl;
-                view(storage);
+                view(teacherVec, studentVec);
                 break;
             case 3: {
                 cout << "Add selected " << endl;
+<<<<<<< HEAD
                 add(storage);
                 // when adding a student enrolled in a course, must add to teacher's list of students
                 // Teacher::addStudent();
+=======
+                add(teacherVec, studentVec);
+>>>>>>> 00bec5c187c30cd0b93f2888ecb782d6c8a51d73
                 break;
             }
             case 4:
@@ -153,6 +180,7 @@ int main() {
                 break;
             case 5:
                 cout << "Remove selected " << endl;
+                remove(teacherVec, studentVec);
                 break;
             default:
                 cout << "INVALID KEY " << endl;
