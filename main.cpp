@@ -1,32 +1,23 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
-class Teacher{
-
-};
-
-class Student {
-
-};
 
 class Person{
 private:
     string name;
     int age;
     char gender;
-    vector<Student> students;
-    vector<Teacher> teachers;
+
 public:
     Person(string name, int age, char gender){
         cout << name << ", " << age << ", " << "has been born!" << endl;
         this->name = name;
         this->age = age;
         this->gender = gender;
-        vector<Student> students;
-        vector<Teacher> teachers;
     }
     string getName(){
         return name;
@@ -47,11 +38,24 @@ public:
         this->gender = gender;
     }
     ~Person(){
-        cout<< this->getName() << ", " << this->getAge() << ", " << "has died!" << endl;
+        //cout<< this->getName() << ", " << this->getAge() << ", " << "has died!" << endl;
     }
+}; //end of Person
+
+class Teacher : public Person{
+private:
+    int tid;
+    string course;
+    uint16_t salary;
+public:
+
 };
 
-Person add(){
+class Student : public Person{
+
+};
+
+void add(vector<Person> &storage){
     cout << endl;
     cout << setfill(' ') << setw(59) << "1. Add Teacher" << endl;
     cout << setfill(' ') << setw(59) << "2. Add Student" << endl;
@@ -70,7 +74,8 @@ Person add(){
             cout << "Provide a gender (M/F) for " << name << ": ";
             cin >> gender;
             Person temp (name, age, gender);
-            return temp;
+            storage.push_back(temp);
+            break;
         }
         case 2:{
             cout << "Add student selected " << endl;
@@ -79,9 +84,20 @@ Person add(){
         default:
             break;
     }
-}
+} //end add()
+
+void view(vector<Person> storage) {
+    cout << endl;
+    for(int i =0; i<storage.size(); i++) {
+        cout << storage[i].getName() << ", "
+        << storage[i].getAge()<< endl;
+    }
+} //end view()
+
 int main() {
+    vector<Person> storage;
     while(1) {
+        // Print statements for the console output
         cout << endl;
         cout << endl;
         cout << endl;
@@ -99,16 +115,19 @@ int main() {
         cout << setfill('_') << setw(120) << "_" << endl;
         int input = 0;
         cin >> input;
+
+        // Start of switch case statement
         switch (input) {
             case 1:
                 cout << "EXITING" << endl;
                 exit(1);
             case 2:
                 cout << "View selected " << endl;
+                view(storage);
                 break;
             case 3: {
                 cout << "Add selected " << endl;
-                Person init = add();
+                add(storage);
                 break;
             }
             case 4:
